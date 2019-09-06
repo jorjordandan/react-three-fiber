@@ -226,7 +226,7 @@ The event data you receive contains the browser event as well as the Threejs eve
 All hooks can only be used **inside** the Canvas element because they rely on context updates! You cannot expect something like this to work:
 
 ```jsx
-funciton App() {
+function App() {
   const { gl } = useThree() // This will just crash
   return (
     <Canvas>
@@ -237,12 +237,12 @@ funciton App() {
 Do this instead:
 
 ```jsx
-funciton SomeComponent() {
+function SomeComponent() {
   const { gl } = useThree()
   return <mesh />
 }
         
-funciton App() {
+function App() {
   return (
     <Canvas>
       <SomeComponent />
@@ -251,7 +251,7 @@ funciton App() {
 
 #### useThree()
 
-This hooks gives you access to all the basic objects that are kept internally, like the default renderer, scene, camera. It also gives you the size of the canvas in screen and viewport coordinates. When you resize the canvas, or the browser window, your component will be updated with fresh values. 
+This hook gives you access to all the basic objects that are kept internally, like the default renderer, scene, camera. It also gives you the size of the canvas in screen and viewport coordinates. When you resize the canvas, or the browser window, your component will be updated with fresh values. 
 
 ```jsx
 import { useThree } from 'react-three-fiber'
